@@ -25,7 +25,9 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
         <div className="header-container">
           <div className="logo-search">
             <img src={Logo} alt="LinkedIn"  />
-            <input className="search-header" type="text" placeholder="Search" />
+            <div className="search-container">
+              <input className="search-header" type="text" placeholder="Search" />
+            </div>
           </div>
           
           <div className="menu-header">
@@ -39,22 +41,23 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
                 <li><TiThMenuOutline size={25}/>Work</li>
               </ul>
             </nav>
+            <div className="avatar-container" > 
+              <div className="switch">
+                <Switch
+                  onChange={toggleTheme}
+                  checked={title === 'dark'}
+                  checkedIcon={false}
+                  uncheckedIcon={false}
+                  height={25}
+                  width={50}
+                  handleDiameter={20}
+                  offColor={colors.tertiary}
+                  onColor={colors.primary}
+                />
+              </div>
 
-            <div className="switch">
-              <Switch
-                onChange={toggleTheme}
-                checked={title === 'dark'}
-                checkedIcon={false}
-                uncheckedIcon={false}
-                height={25}
-                width={50}
-                handleDiameter={20}
-                offColor={colors.tertiary}
-                onColor={colors.primary}
-              />
+              <img src={Avatar} alt="avatar" />
             </div>
-
-            <img src={Avatar} alt="avatar" />
           </div>
         </div>
       </Container>

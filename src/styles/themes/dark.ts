@@ -4,16 +4,16 @@ export default {
   colors: {
     primary: '#0077B5',
     secondary: '#283E4A',
-    tertiary: '#DADFE3',
-    text:'#212529',
-    title: 'rgba(0,0,0,.9)',
+    tertiary: '#45444D',
+    text:'#E2E1E7',
+    title: '#E2E1E7',
     numbers: '#0073B1',
     subText: 'rgba(255,255,255,0.9)',
-    background: '#999',
-    backgroundCard: 'rgba(255,255,255,0.7)',
+    background: '#212025',
+    backgroundCard: '#333238',
     textSecondary: '#999',
 
-    backgroundHeader: '#162229',
+    backgroundHeader: '#333238',
     searchBorder: '#ccc'
   },
 };

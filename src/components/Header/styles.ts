@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import search from '../../assets/search.svg';
+
 interface Header {
   colorBackground?: string;
   colorText?: string;
@@ -12,6 +14,7 @@ export const Container = styled.header<Header>`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1.5rem;
 
   .header-container {
     width: 90%;
@@ -20,19 +23,28 @@ export const Container = styled.header<Header>`
   }
 
   .search-header {
-    padding-left: 10px;
-    border-radius: 10px;
-    height: 30px;
-    border: 2px solid ${props => props.theme.colors.searchBorder};
+    margin-left: 2rem;
+    width: 23rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    border: none;
     outline: none;
-    color: ${props => props.theme.colors.subText};
-    background: ${props => props.theme.colors.background};  
-    
-    ::placeholder {
-      color: ${props => props.theme.colors.subText}
-    }
+    padding-left: 2rem;
+    background: ${props => props.theme.colors.backgroundHeader} url(${search}) no-repeat; 
+    background-position: top 50% left 0, 0 0;
+    background-size: 15px;
+    border-bottom: 2px solid #bbb;
+    color: #bbb;
+    transition: border-bottom ease-in .3s;
   }
 
+  ::placeholder {
+      color: #bbb;
+    }
+
+  .search-header:focus {
+    border-bottom: 2px solid ${props => props.theme.colors.primary};
+  }
 
   .header-container img:first-child {
     height: 3rem;
@@ -46,14 +58,13 @@ export const Container = styled.header<Header>`
 
   .logo-search{
     display: flex;
-    flex: 1;  
     justify-content: space-evenly;
     align-items: center;
   }
 
   .menu-header {
     display: flex;
-    flex: 2;
+
     justify-content: center;
     align-items: center;
   }
@@ -89,9 +100,32 @@ export const Container = styled.header<Header>`
   .switch {
     margin: 0 3rem;
   }
-`;
 
-// border-bottom-color: #0e76a8;
-// border-bottom-style: solid;
-// border-bottom-width: 4px;
-// margin-bottom: 7rem;
+  .avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 1286px) {
+    .menu-header nav {
+      display: none;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .search-header {
+      width: 17.5rem;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .avatar-container img {
+      display: none;
+    }
+
+    .switch {
+      margin: 0;
+    }
+  }
+`;
